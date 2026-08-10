@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dynamic Shopping App</title>
+</head>
+<style>
+
+body{
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 20px;
+}
+
+header{
+    background-color: rgb(98, 0, 255);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+section{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+article{
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 250px;
+    text-align: center;
+    box-shadow: 2px 2px 8px gray;
+}
+article img{
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+button{
+    background-color: green;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover{
+    background-color: rgb(0, 97, 100);
+}
+aside{
+    background-color: white;
+    border: 1px solid gray;
+    padding: 15px;
+    margin-top: 20px;
+}
+footer{
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+}
+</style>
+<body>
+    <header>
+    <h1>Dynamic Shopping App</h1>
+    <p>Welcome to our online shopping store!</p>
+    </header>
+<section>
+
+    <h2>Products</h2>
+
+   <article>
+    <img src="shoes.webp" alt="Shoes" width="150" height="150">
+
+    <h3>Shoes</h3>
+
+    <p>Price: ₹2000</p>
+
+    <button onclick="addToCart('Shoes',2000)">
+        Add to Cart
+    </button>
+</article>
+
+    <article>
+    <img src="watch.jpg" alt="Watch" width="150" height="150">
+
+    <h3>Watch</h3>
+
+    <p>Price: ₹1500</p>
+
+    <button onclick="addToCart('Watch',1500)">
+        Add to Cart
+    </button>
+</article>
+
+   <article>
+    <img src="bag.jpg" alt="Bag" width="150" height="150">
+
+    <h3>Bag</h3>
+
+    <p>Price: ₹1200</p>
+
+    <button onclick="addToCart('Bag',1200)">
+        Add to Cart
+    </button>
+</article>
+
+</section>
+<aside>
+
+    <h2>Shopping Cart</h2>
+
+    <ul id="cartItems">
+
+    </ul>
+
+    <h3>Total: ₹<span id="total">0</span></h3>
+
+</aside>
+<script>
+let total = 0;
+
+function addToCart(name, price) {
+
+    let cart = document.getElementById("cartItems");
+
+    let item = document.createElement("li");
+
+    item.innerHTML = name + " - ₹" + price + " ";
+
+    let removeButton = document.createElement("button");
+
+    removeButton.innerHTML = "Remove";
+
+    removeButton.onclick = function() {
+
+        cart.removeChild(item);
+
+        total = total - price;
+
+        document.getElementById("total").innerHTML = total;
+
+    };
+
+    item.appendChild(removeButton);
+
+    cart.appendChild(item);
+
+    total = total + price;
+
+    document.getElementById("total").innerHTML = total;
+
+}
+
+</script>
+<footer>
+    <p>&copy; 2026 Dynamic Shopping App. All Rights Reserved.</p>
+</footer>
+</body>
+</html>
