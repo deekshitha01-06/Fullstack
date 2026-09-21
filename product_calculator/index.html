@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Product Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Product Calculator</h1>
+
+        <label for="productName">Product Name:</label>
+        <input type="text" id="productName" placeholder="Enter product name">
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" min="1" value="1">
+
+        <label for="price">Price per Product:</label>
+        <input type="number" id="price" min="0" value="0">
+
+        <button id="calculateBtn">Calculate Total</button>
+
+        <h2>Total Price: ₹<span id="total">0</span></h2>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
