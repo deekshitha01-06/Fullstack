@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>DOM Demonstration</title>
+</head>
+<body>
+
+    <h1 id="heading">DOM Demonstration</h1>
+
+    <p id="text">This is the original content.</p>
+
+    <button onclick="changeContent()">Change Content</button>
+    <button onclick="changeStyle()">Change Style</button>
+    <button onclick="changeAttribute()">Change Attribute</button>
+
+    <script>
+
+        function changeContent() {
+            document.getElementById("text").innerText =
+                "The content has been changed!";
+        }
+
+        function changeStyle() {
+            document.getElementById("heading").style.color = "blue";
+            document.getElementById("heading").style.fontSize = "40px";
+        }
+
+        function changeAttribute() {
+            document.getElementById("heading").setAttribute(
+                "title",
+                "This is a DOM heading"
+            );
+
+            alert("Attribute changed!");
+        }
+
+    </script>
+
+</body>
+</html>
