@@ -1,2 +1,0 @@
-This file is created using the Node.js fs module.
-This is additional content.
